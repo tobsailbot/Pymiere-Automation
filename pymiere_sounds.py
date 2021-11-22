@@ -8,8 +8,10 @@ cursorInTicks = cursorPos.ticks
 # argumento del cmd
 
 
+
 # nombre de la carpeta donde se encuentran los sonidos
-findMe = 'swoosh'
+
+findMe = sys.argv[1]
 
 # buscar el numero index de una determinada carpeta bin
 def findBinIndex (rootPath, nameToFind):
@@ -41,7 +43,7 @@ def findBinIndex (rootPath, nameToFind):
 
 
                 pymiere.objects.app.project.sequences[0].audioTracks[1].overwriteClip(currentChild.children[r], cursorPos)
-                #print('El clip: ' + currentChild.children[r].name + ' se importó a la timeline')
+                print( currentChild.children[r].name + ' se importó a la timeline')
 
                 f = open('parametros.txt', 'w')
                 f.write(str(r))
@@ -52,5 +54,5 @@ def findBinIndex (rootPath, nameToFind):
             print('No se encuentra la carpeta...')
 
 
-# ejecutar funcion
+# ejecutar funcio
 findBinIndex(pymiere.objects.app.project.rootItem, findMe)

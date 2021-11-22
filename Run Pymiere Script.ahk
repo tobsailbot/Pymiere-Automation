@@ -11,7 +11,7 @@ SetWorkingDir %A_ScriptDir%  ; Ensures a consistent starting directory.
 if WinExist("Pymiere Console")
 {
     	WinActivate , Pymiere Console
-	Send, python pymiere_pop_sounds.py
+	Send, python pymiere_sounds.py pop
 	Send, {Enter}
 	WinMinimize, Pymiere Console
 }
@@ -19,7 +19,7 @@ else
 {
 	Run, C:\PythonScripts\Pymiere Automation\Pymiere Console.lnk
     	WinWaitActive, Pymiere Console
-	Send, python pymiere_pop_sounds.py
+	Send, python pymiere_sounds.py pop
 	Send, {Enter}
 	WinMinimize, Pymiere Console
 }
