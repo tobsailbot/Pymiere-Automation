@@ -2,7 +2,7 @@ import pymiere
 import random
 import sys
 
-cursorPos = pymiere.objects.app.project.sequences[0].getPlayerPosition()
+cursorPos = pymiere.objects.app.project.activeSequence.getPlayerPosition()
 cursorInTicks = cursorPos.ticks
 
 # argumento del cmd
@@ -42,7 +42,7 @@ def findBinIndex (rootPath, nameToFind):
                     # importar el clip a la secuencia, en el track de audio numero 2
 
 
-                pymiere.objects.app.project.sequences[0].audioTracks[1].overwriteClip(currentChild.children[r], cursorPos)
+                pymiere.objects.app.project.activeSequence.audioTracks[1].overwriteClip(currentChild.children[r], cursorPos)
                 print( currentChild.children[r].name + ' se importó a la timeline')
 
                 f = open('parametros.txt', 'w')
